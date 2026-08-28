@@ -15,6 +15,25 @@
             Bienvenido a tu primera aplicación
             Web con Flask y Jinja.
         </p>
+
+        <h2>
+            Tus pasatiempos son:
+        </h2>
+        <ul>
+            {% for pasatiempo in pasatiempos %}
+            <li>
+                {{ pasatiempo }}
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h2>
+            Lo que más te gusta hacer:
+        </h2>
+        <p>
+            {{ me_gusta }}
+        </p>
+
         <a href="/">Regresar</a>
     </div>
 </body>
