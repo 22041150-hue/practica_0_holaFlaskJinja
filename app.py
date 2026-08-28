@@ -17,10 +17,17 @@ def inicio():
 def saludar():
     # Recuperar el dato cuyo name en HTML es "nombre"
     nombre = request.form["nombre"]
-    # Enviar la variable nombre hacia saludar.html
+    # Recuperar la lista de pasatiempos marcados (checkboxes)
+    pasatiempos = request.form.getlist("pasatiempos")
+    # Recuperar el texto libre del textarea
+    me_gusta = request.form["me_gusta"]
+
+    # Enviar las variables hacia saludar.html
     return render_template(
         "saludar.html",
-        nombre=nombre
+        nombre=nombre,
+        pasatiempos=pasatiempos,
+        me_gusta=me_gusta
     )
 
 # Iniciar el servidor de desarrollo
